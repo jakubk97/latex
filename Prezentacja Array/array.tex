@@ -1,0 +1,221 @@
+\documentclass{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{Antibes}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{longtable}
+
+
+
+\title{PAKIET ARRAY}
+\subtitle{tworzenie tabel w LaTeX'ie}
+\author{Adam Czerwiński i Jakub Karmański}
+\institute{POLSL}
+\date{28.10.2019}
+ 
+\renewcommand*\contentsname{Summary}
+ 
+\begin{document}
+ 
+\maketitle
+ 
+\tableofcontents
+ 
+\section{Wprowadzenie}
+
+\begin{frame}[fragile]
+Array to pakiet do LaTeX’a który udostępnia narzędzia do produkowania rozbudowanych tabel. 
+Same tabele nie potrzebują pakietu 'array' do stworzenia tablicy, lecz w przypadku chęci ingerowania w np. długość czy kolor komórek pakiet ten jest wymagany.
+
+W celu jego dodania do naszego pliku używamy:
+
+\begin{lstlisting}
+\usepackage{array}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+
+Aby zdefiniować tablice:
+\begin{lstlisting}
+\begin{tabular}
+\end{tabular} 
+\end{lstlisting}
+To oświadcza, że w tabeli zostaną użyte trzy kolumny oddzielone pionową linią. Każde c oznacza, że zawartość kolumny zostanie wyśrodkowana, możesz także użyć r, aby wyrównać tekst do prawej i l, aby wyrównać do lewej:
+\begin{lstlisting}
+{ |c|c|c| }
+\end{lstlisting}
+Spowoduje to wstawienie poziomej linii na górze stołu i na dole. Nie ma ograniczeń co do liczby przypadków użycia \ hline :
+\begin{lstlisting}
+\hline
+\end{lstlisting}
+Każdy 'Et' jest separatorem komórek, a podwójny ukośnik \\ ustawia koniec tego wiersza.
+\begin{lstlisting}
+cell1 & cell2 & cell3 \\
+\end{lstlisting}
+\end{frame}
+
+\section{Tworzenie prostej tabeli w LaTeX}
+\begin{frame}[fragile]
+ 
+Poniżej możemy zobaczyć najprostszy działający przykład tabeli bez użycia pakietu array
+
+\begin{lstlisting}
+\begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{center} 
+
+Gdzie { c c c } - jest definicją kolumn naszej tablicy.Litera 'c' pochodzi od słowa 'center' i jest ona wymagana podczas definiowania kolumn naszej tablicy
+ 
+\end{frame}
+
+\begin{frame}[fragile]
+
+Obramowanie:
+\begin{lstlisting}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+\end{tabular}
+\end{center}
+\end{lstlisting}
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+\end{tabular}
+\end{center}
+\end{frame}
+
+\section{Tablice o stałej długości}
+
+\begin{frame}[fragile]
+\begin{lstlisting}
+\begin{tabular}{ | m{1cm} | m{1cm}| m{1cm} | } 
+\hline
+cell1 dummy text dummy text dummy text& cell2 & cell3 \\ 
+\hline
+cell1 dummy text dummy text dummy text & cell5 & cell6 \\ 
+\hline
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+ \begin{center}
+\begin{tabular}{ | m{2cm} | m{1cm}| m{3cm} | } 
+\hline
+cell1 & cell2 & cell3 \\ 
+\hline
+cell1 & cell5 & cell6 \\ 
+\hline
+cell7 & cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\section{Lączenie kolumn i wierszy}
+
+
+
+\begin{frame}
+\begin{center}
+\begin{tabular}{ |p{2cm}|p{2cm}|p{2cm}|  }
+ \hline
+ \multicolumn{3}{|c|}{Połączenie 3 kolumn} \\
+ \hline
+ Kol1&Kol2&Kol3\\
+ \hline
+ 1 & 2 & 3\\
+ 1 & 2 & 3\\
+ 1 & 2 & 3\\
+ 1 & 2 & 3\\
+ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}
+
+ multicolumn  {3}  {|c|}  {Połączenie 3 kolumn}
+ 
+ usepackage	{multirow}
+\end{frame}
+
+\section{Tabele wielostronicowe}
+\begin{frame}[fragile]
+ 
+Zachowanie longtable jest podobne do domyślnego tabelarycznego, ale generuje tabele, które można podzielić za pomocą standardowego algorytmu podziału strony LATEX. Istnieją cztery elementy specyficzne dla longtable.
+\end{frame}
+
+\begin{frame}
+
+1.endfirsthead\\
+Wszystko powyżej tego polecenia pojawi się na początku tabeli, na pierwszej stronie.\\
+
+2.endhead\\
+Cokolwiek umieścisz przed tym poleceniem i poniżej endfirsthead, wyświetli się u góry tabeli na każdej stronie oprócz pierwszej.\\
+
+3.endfoot\\
+Podobnie jak endhead, to co umieścisz po endhead i przed tym poleceniem pojawi się na dole tabeli na każdej stronie oprócz ostatniej.\\
+
+4.endlastfoot\\
+Podobne do endfisthead. Elementy po endfoot i przed tym poleceniem będą wyświetlane na dole tabeli, ale tylko na ostatniej stronie, na której pojawia się tabela.\\
+Przykład w pliku...
+\end{frame}
+
+\section{Pozycjonowanie tablic}
+\begin{frame}
+ 
+\end{frame}
+
+\section{Podpisy,etykiety i odniesienia}
+\begin{frame}
+ 
+\end{frame}
+
+\section{Lista tabel}
+\begin{frame}
+ 
+\end{frame}
+
+\section{Zmiana wyglądu tabeli}
+\begin{frame}
+ 
+\end{frame}
+
+\section{Linki}
+\begin{frame}
+ www.overleaf.com/learn/latex/Tables
+\end{frame}
+
+\section{Zadanie}
+\begin{frame}
+ Przygotować tabele,która będzie miała w sobie połączone kolumny oraz wiersze.
+ 
+\end{frame}
+ 
+ 
+\end{document}

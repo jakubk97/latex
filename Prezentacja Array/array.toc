@@ -1,0 +1,12 @@
+\babel@toc {polish}{}
+\beamer@sectionintoc {1}{Wprowadzenie}{2}{0}{1}
+\beamer@sectionintoc {2}{Tworzenie prostej tabeli w LaTeX}{5}{0}{2}
+\beamer@sectionintoc {3}{Tablice o stałej długości}{7}{0}{3}
+\beamer@sectionintoc {4}{Lączenie kolumn i wierszy}{9}{0}{4}
+\beamer@sectionintoc {5}{Tabele wielostronicowe}{11}{0}{5}
+\beamer@sectionintoc {6}{Pozycjonowanie tablic}{13}{0}{6}
+\beamer@sectionintoc {7}{Podpisy,etykiety i odniesienia}{14}{0}{7}
+\beamer@sectionintoc {8}{Lista tabel}{15}{0}{8}
+\beamer@sectionintoc {9}{Zmiana wyglądu tabeli}{16}{0}{9}
+\beamer@sectionintoc {10}{Linki}{17}{0}{10}
+\beamer@sectionintoc {11}{Zadanie}{18}{0}{11}

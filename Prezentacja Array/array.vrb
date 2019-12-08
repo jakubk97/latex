@@ -1,0 +1,2 @@
+
+Zachowanie longtable jest podobne do domyślnego tabelarycznego, ale generuje tabele, które można podzielić za pomocą standardowego algorytmu podziału strony LATEX. Istnieją cztery elementy specyficzne dla longtable.

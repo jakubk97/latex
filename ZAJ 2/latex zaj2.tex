@@ -1,0 +1,107 @@
+\documentclass{beamer}
+\setbeamercovered{transparent}
+\usepackage[utf8]{inputenc}
+\usetheme{Antibes} 
+
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage{xcolor,colortbl}
+\definecolor{green}{rgb}{0.1,0.1,0.1}
+\newcommand{\done}{\cellcolor{teal}done}  %{0.9}
+\newcommand{\hcyan}[1]{{\color{teal} #1}}
+
+\newcommand{\colorek}{\cellcolor{teal}colorek}
+
+%Information to be included in the title page:
+\title{Nauka beamera}
+\author{Jakub Karmański}
+\institute{POLSL}
+\date{14.10.2019}
+ 
+ 
+ 
+\begin{document}
+ 
+\frame{\titlepage}
+ 
+\begin{frame}
+\frametitle{Strona 1}
+ \framesubtitle{podtytuł}
+\begin{itemize}
+\color{blue}
+\item<1> \textbf{a}
+\item<2> \textit{b}
+\item<4> \textcolor{red}{\textbf{d}}
+\item<3> \underline{c}
+\end{itemize}
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{Strona 2}
+ \framesubtitle{podtytuł}
+\begin{itemize}
+ \item<1-> \href{https://pl.wikipedia.org/wiki/LaTeX}{\beamergotobutton{Link do wikipedii o latexie}}
+ \item<2-> Dowolny tekst
+\end{itemize}
+ \end{frame}
+ 
+
+\begin{frame}
+\frametitle{Strona 3}
+ \framesubtitle{podtytuł}
+
+	\begin{center}
+\begin{tabular}{ | m{1cm} | m{1cm}| m{1cm} | } 
+\hline
+\onslide<1>{a & b & c} \\ 
+\hline
+\onslide<2>{d & e & f} \\ 
+\hline
+\onslide<2>{g & h & i} \\
+\hline
+\end{tabular}
+\end{center}
+
+ \end{frame} 
+ 
+ 
+\begin{frame}
+\frametitle{Strona 4}
+\framesubtitle{podtytuł}
+ 
+\begin{center}
+\begin{table}[ht]
+\caption{Multi-column and multi-row table}
+\begin{center}
+\begin{tabular}{ccc}
+    \hline
+    \multicolumn{2}{c}{\multirow{2}{*}{Multi-col-row}}&X\\
+    \multicolumn{2}{c}{}&X\\
+    \hline
+    X&X&X\\
+    \hline
+\end{tabular}
+\end{center}
+\label{tab:multicol}
+\end{table}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Strona 5}
+\framesubtitle{podtytuł}
+ 
+\begin{center}
+\begin{tabular}{ll}
+\done & other \\
+\hline
+brak & \colorek \\
+\end{tabular}
+\end{center}
+\end{frame}
+ 
+ 
+ \end{document}

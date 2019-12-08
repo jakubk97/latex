@@ -1,0 +1,80 @@
+\documentclass{beamer}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage{calculator}
+
+ 
+%Information to be included in the title page:
+\title{package Calculator}
+\author{Jakub Karmański}
+\institute{POLSL RMS rok III sem.V}
+\date{2019}
+ 
+ 
+ 
+\begin{document}
+ 
+\frame{\titlepage}
+ 
+\begin{frame}
+\frametitle{ZAD 1}
+
+\ADD{31}{10}{\dodaj}
+\SUBTRACT{1997}{\dodaj}{\odejmij}
+\POWER{\odejmij}{2}{\potega}
+\potega
+ 
+\end{frame}
+
+\begin{frame}
+\frametitle{ZAD 2}
+
+ \SIN{\numberSIXTHPI}{\sinn}
+ \COS{\numberFIFTHPI}{\coss}
+ \MULTIPLY{\sinn}{\coss}{\mnozenie}
+ \ROUND[2]{\mnozenie}{\zaokraglenie} 
+\zaokraglenie
+
+\end{frame}
+
+\begin{frame}
+\frametitle{ZAD 3}
+
+ \CUBE{2}{\szescian} 
+ \SUBTRACT{\numberFIFTHPI}{\szescian}{\dzielenie} 
+ \ABSVALUE{\dzielenie}{\bezw} 
+\bezw
+
+\end{frame}
+
+\begin{frame}
+\frametitle{ZAD 4}
+
+ \ADD{31}{10}{\dodaj}
+ \SUBTRACT{1997}{\dodaj}{\odejmij}
+ \CUBE{2}{\szescian} 
+ \SUBTRACT{\numberFIFTHPI}{\szescian}{\dzielenie} 
+ \ABSVALUE{\dzielenie}{\bezw} 
+ \SIN{\numberSIXTHPI}{\sinn}
+ \COS{\numberFIFTHPI}{\coss}
+ \MULTIPLY{\sinn}{\coss}{\mnozenie}
+ \ROUND[2]{\mnozenie}{\zaokraglenie} 
+
+
+\MATRIXCOPY( \sinn , \bezw , \coss ;
+\dzielenie, \mnozenie , \zaokraglenie;
+\szescian , \dodaj, \odejmij)%
+(\sola,\solb,\solc;
+\sold,\sole,\solf;
+\solg,\solh,\soli)
+$\begin{bmatrix}
+\sola & \solb & \solc \\
+\sold & \sole & \solf \\
+\solg & \solh & \soli
+\end{bmatrix}$
+
+
+
+\end{frame}
+ 
+\end{document}
