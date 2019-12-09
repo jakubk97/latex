@@ -1,0 +1,105 @@
+\documentclass[table]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{Antibes}
+
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+
+\title{PAKIET ALGORITHM}
+\subtitle{}
+\author{Jakub Karmański}
+\institute{POLSL}
+\date{18.11.2019}
+ 
+
+\begin{document}
+ 
+\maketitle
+
+
+\begin{algorithm}[H]
+\SetAlgoLined
+ 
+  pobierz a,b,c\;
+  oblicz delte -> delta = b^2-4ac\;
+  
+  \eIf{delta<0}{
+   brak rozwiązań\;
+   }{
+   \eIf{delta=0}{
+   x = -b/2a\;
+   }{
+   x1 = -b+sqrt(delta)/2a\;
+    x2 = -b-sqrt(delta)/2a\;
+  }
+  }
+ 
+ \caption{Zad 1}
+\end{algorithm}
+
+\begin{frame}
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\SetKwProg{Fn}{Funkcja}{ is}{end}
+\Fn{mojafunkcja(i: int) : int}{return 0\;}
+\SetKwProg{Def}{def}{:}{}
+\Def{mojafunkcja(i: int)}{return 0\;}
+\end{algorithm}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{algorithm}[H] \SetAlgoLined 
+\KwData{this text} 
+\KwResult{how to write algorithm with \LaTeX2e } 
+\BlankLine initialization\; 
+\While{not at end of this document}{ read current\; 
+\eIf{understand}{ go to next section\; current section becomes this one\; }
+{ go back to the beginning of current section\; } } \end{algorithm}
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{algorithm}[H]
+\LinesNumbered
+\SetAlgoLined
+\KwData{A bitmap Im of size w x l}
+\KwResult{A partition of the bitmap}
+\BlankLine
+ 
+\For{$i\leftarrow 2$
+\KwTo $l$}{
+    $j\leftarrow 2$ \KwTo $w$ left $\leftarrow FindCompress(lm[i,j-1])$
+    $\textbf{up}\leftarrow FindCompress(lm[i-1,])$
+    $\textbf{this}\leftarrow FindCompress(lm[i,j])$
+   
+    \uIf{\textbf{left} \textcolor{red}{compatible with} \textbf{this}}{
+        \lIf{\textbf{left<this}}{Union(\textbf{left,this})}
+        \lElse{Union(\textbf{this,left})}
+    }
+   
+    \uIf{\textbf{up} \textcolor{red}{compatible with} \textbf{this}}{
+        \lIf{\textbf{up<this}}{Union(\textbf{up,this})}
+        \textcolor{orange}{\tcp*[l]{this is put under up to keep tree as flat as possible}}
+        \lElse{Union(\textbf{this,up})\;}
+        \textcolor{orange}{\tcp*[l]{this linked to up}}
+    }
+   
+    \lForEach{element e of the line i}
+    {FindCompress(p)}
+}
+ 
+\end{algorithm}	
+
+\end{frame}
+
+
+\end{document}

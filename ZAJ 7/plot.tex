@@ -1,0 +1,153 @@
+\documentclass[table]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{Antibes}
+
+\usepgfplotslibrary{external}
+\usepackage{pgfplots}
+\pgfplotsset{width=8cm,compat=1.9}
+\usepgfplotslibrary{external} 
+\usepgfplotslibrary{polar}
+
+
+\title{PAKIET ALGORITHM}
+\subtitle{}
+\author{Jakub Karmański}
+\institute{POLSL}
+\date{25.11.2019}
+ 
+
+\begin{document}
+ 
+\maketitle
+
+\begin{frame}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=-10:10, 
+    samples=100, 
+    color=red,
+]
+{x^2 - x - 2};
+\addlegendentry{$x^2 - x - 2$}
+%Here the blue parabloa is defined
+\addplot [
+    domain=-10:10, 
+    samples=100, 
+    color=blue,
+    ]
+    {-x^3 + 6*x + 3};
+\addlegendentry{$-x^3 + 6*x + 3$}
+ 
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+
+
+\begin{frame}
+
+\begin{tikzpicture} 
+\begin{axis}[ ybar, enlargelimits=0.15, legend style={at={(0.5,-0.2)}, anchor=north,legend columns=-1}, ylabel={#Liczba ludności Gliwic [tys.]}, symbolic x coords={2015,2016,2017,2018,2019}, xtick=data, nodes near coords, nodes near coords align={vertical}, x tick label style={rotate=60,anchor=east}, ] 
+\addplot coordinates {(2015,183.396) (2016,182.156) (2017,181.309 ) (2018,182.375 ) (2019,183.333)}; 
+\end{axis} 
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+\begin{tikzpicture} 
+\begin{axis}[ ybar, enlargelimits=0.15, legend style={at={(0.5,-0.2)}, anchor=north,legend columns=-1}, ylabel={#Liczba ludności Polski [mln]}, symbolic x coords={2015,2016,2017,2018,2019}, xtick=data, nodes near coords, nodes near coords align={vertical}, x tick label style={rotate=60,anchor=east}, ] 
+\addplot coordinates {(2015,37.981000) (2016,37.970000) (2017,37.970000 ) (2018,37.980000 ) (2019,38.010000)}; 
+\end{axis} 
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+\begin{tikzpicture}
+\begin{axis}[
+    x tick label style={
+        /pgf/number format/1000 sep=},
+    ylabel=Populacja Polski[mln],
+    enlargelimits=0.15,
+    legend style={at={(0.5,-0.15)},
+        anchor=north,legend columns=-1},
+    ybar,
+    bar width=7pt,
+]
+\addplot
+    coordinates {(2015,37.981) (2016,37.970000) (2017,37.970000 ) (2018,37.980000 ) (2019,38.010000)}; 
+ 
+\legend{Lata}
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+
+
+ \begin{frame}
+\begin{tikzpicture}
+    \begin{polaraxis}
+    \addplot+[mark=none,domain=0:720,samples=600]
+        {sin(2*x)*cos(2*x)};
+    \end{polaraxis}
+\end{tikzpicture}
+\end{frame}
+
+ \begin{frame}
+\begin{tikzpicture}
+\begin{axis}[
+    title=Przykład wykresu 3D,
+    colormap/cool,
+]
+\addplot3[
+    mesh,
+    samples=50,
+    domain=-8:8,
+]
+{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};
+\addlegendentry{$\frac{sin(r)}{r}$}
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}
+\begin{tikzpicture}
+\begin{axis}[
+    title=Przykład wykresu 3D na punktach,
+    colormap/cool,
+]
+\addplot3[
+    surf,
+] 
+coordinates {
+(0,0,0) (2,1,0) (0,2,0)
+ 
+(1,0,0) (1,1,0.6) (1,2,0.7)
+ 
+(2,0,0) (2,1,0.7) (2,2,1.8)
+};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
