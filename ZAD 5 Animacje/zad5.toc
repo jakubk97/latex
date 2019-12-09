@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}Macierze 1}{2}% 
+\contentsline {section}{\numberline {2}Kolejny rozdział}{3}% 

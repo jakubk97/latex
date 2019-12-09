@@ -1,0 +1,144 @@
+\documentclass[table]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usetheme{Antibes}
+
+\usepackage{array}
+
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+\setlength{\arrayrulewidth}{0.7mm}
+\setlength{\tabcolsep}{15pt}
+\renewcommand{\arraystretch}{1.3}
+
+
+
+\title{PAKIET ARRAY}
+\subtitle{tworzenie tabel w LaTeX'ie}
+\author{Jakub Karmański}
+\institute{POLSL}
+\date{28.10.2019}
+ 
+
+\begin{document}
+ 
+\maketitle
+
+\listoftables %nie pojawia się ponieważ w bemerze lista tablic nie działa
+
+\begin{frame}
+\begin{tabularx}{0.8\textwidth} { 
+  | >{\raggedright\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ item 11 & item 12 & item 13 \\
+ \hline
+ item 21  & item 22  & item 23  \\
+\hline
+\end{tabularx}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+\hline
+ \multicolumn{3}{|c|}{polaczone kolumny} \\
+ \hline
+col1 & col2 & col3 \\
+\hline
+\multirow{3}{4em}{polaczone wiersze} & cell2 & cell3 \\ 
+& cell5 & cell6 \\ 
+& cell8 & cell9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+Odwołanie do tablicy:  \ref{table:1} (kliknij)
+\end{frame}
+
+\begin{frame}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{||c c c c||} 
+ \hline
+ Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+ \hline\hline
+ 1 & 6 & 87837 & 787 \\ 
+ 2 & 7 & 78 & 5415 \\
+ 3 & 545 & 778 & 7507 \\
+ 4 & 545 & 18744 & 7560 \\
+ 5 & 88 & 788 & 6344 \\ [1ex] 
+ \hline
+\end{tabular}
+\caption{Podpis tablicy}
+\label{table:1}
+\end{table}
+\end{frame}
+
+\begin{frame}
+\begin{tabular}{ |p{2cm}|p{2cm}|p{2cm}|  }
+\hline
+1 & 2 & 3 \\
+\hline
+4 & 5 & 6  \\
+7 & 8 & 9 \\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{3cm}}
+ 
+\arrayrulecolor[HTML]{DB5800}
+\begin{tabular}{ |s|p{2cm}|p{2cm}|  }
+\hline
+\rowcolor{lightgray} \multicolumn{3}{|c|}{Polaczone kolumny} \\
+\hline
+1 & 2 & 3 \\
+\hline
+4 & 5 & \cellcolor[HTML]{AA0044}6 \\
+\rowcolor{pink}
+7 & 8 & 9 \\
+\hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}
+\newcolumntype{s}{>{\columncolor[HTML]{AAACED}} p{3cm}}
+ 
+ \arrayrulecolor{black}
+  \begin{tabular}{ |l!{\color{green}\vrule}l|}
+    \arrayrulecolor{red}\hline
+    1 & 2\\\arrayrulecolor{blue}\hline
+    3 & 4\\\arrayrulecolor{yellow}\hline
+  \end{tabular}
+\end{frame}
+
+\begin{frame}
+\begin{table}[H]
+ \centering
+ \begin{tabular}{|l!{\color{red}\vrule}l|l|}
+ \hline
+ & \multicolumn{1}{c|}{Text}  \\
+ \hline
+ \parbox[t]{2mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{text}}} & text\\
+ & text \\\arrayrulecolor{blue}\hline
+ & text \\\arrayrulecolor{black}
+ \hline
+ \end{tabular}
+ \end{table}
+\end{frame}
+
+\end{document}
