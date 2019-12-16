@@ -1,0 +1,43 @@
+\documentclass[a4paper,11pt,twoside]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\usepackage{lipsum} 
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Left Header \\ 2nd left header }
+\fancyhead[R]{Right Header \\ 2nd right header }
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+ 
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\title{Lorem Ipsum - zadanie 2}
+\date{2019\\ December}
+\author{Jakub Karmański}
+ 
+\begin{document}
+
+
+\maketitle 
+\thispagestyle{empty}
+
+
+\newpage
+\section{FIRST SECTION}
+\lipsum[1-2]
+
+
+\newpage
+\section{SECOND SECTION}
+\lipsum[3-5]
+
+
+\newpage
+
+
+ 
+\end{document}
